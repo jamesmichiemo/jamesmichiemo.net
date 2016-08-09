@@ -1,0 +1,24 @@
+= form_for @piece do |f|
+  - if @piece.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@piece.errors.count, "error")} prohibited this piece from being saved:"
+      ul
+        - @piece.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :photo
+    = f.text_field :photo
+  .field
+    = f.label :video
+    = f.text_field :video
+  .field
+    = f.label :audio
+    = f.text_field :audio
+  .field
+    = f.label :words
+    = f.text_area :words
+  .field
+    = f.label :caption
+    = f.text_area :caption
+  .actions = f.submit

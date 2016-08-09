@@ -1,0 +1,21 @@
+h1 #{Time.now}
+
+table id="pieces"
+  thead
+    tr
+      th Photo
+      th Video
+      th Audio
+      th Words
+      th Caption
+      th
+      th
+      th
+
+  tbody class="page"
+    = render @pieces
+br
+
+= link_to 'New Piece', new_piece_path
+
+= paginate @pieces

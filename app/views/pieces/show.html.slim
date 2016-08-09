@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Photo:
+  = @piece.photo
+p
+  strong Video:
+  = @piece.video
+p
+  strong Audio:
+  = @piece.audio
+p
+  strong Words:
+  = @piece.words
+p
+  strong Caption:
+  = @piece.caption
+
+= link_to 'Edit', edit_piece_path(@piece)
+'|
+= link_to 'Back', pieces_path
