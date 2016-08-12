@@ -1,0 +1,12 @@
+= form_for [:admin, @video_stream] do |f|
+  - if @video_stream.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@video_stream.errors.count, "error")} prohibited this video_stream from being saved:"
+      ul
+        - @video_stream.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :url
+    = f.text_field :url
+  .actions = f.submit

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
     resources :sessions, :only => [:new, :create, :destroy]
     get '/logout' => 'sessions#destroy', :as => :logout
+
+    resources :video_streams
   end
 
   resources :pieces, :only => [:index, :show]

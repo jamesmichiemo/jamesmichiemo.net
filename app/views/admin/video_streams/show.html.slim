@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong URL:
+  = @video_stream.url
+
+= link_to 'Edit', edit_admin_video_stream_path(@video_stream)
+'|
+= link_to 'Back', :back 

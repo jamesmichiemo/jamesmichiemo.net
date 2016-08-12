@@ -18,3 +18,5 @@ require 'securerandom'
     :state => 'published'
   )
 end
+
+VideoStream.create(url:'http://player.twitch.tv/?channel=shaeta')
