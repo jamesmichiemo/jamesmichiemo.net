@@ -5,5 +5,6 @@
     td = piece.audio
     td = piece.words
     td = piece.caption
-    td = link_to 'Show', piece
+    td = link_to 'Edit', edit_admin_piece_path(piece)
+    td = link_to 'Show', admin_piece_path(piece)
 

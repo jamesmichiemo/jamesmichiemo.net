@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :pieces
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    root to: 'pieces#index'
+
+    resources :pieces do
+      # put :unpublish, :on => :member
+      # put :publish,  :on => :member
+    end
+  end
+
+  resources :pieces, :only => [:index, :show]
+
   root 'welcome#index'
 end

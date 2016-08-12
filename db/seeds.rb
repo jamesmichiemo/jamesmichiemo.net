@@ -14,6 +14,7 @@ require 'securerandom'
     :video => SecureRandom.hex(6),
     :audio => SecureRandom.hex(6),
     :words => SecureRandom.hex(6),
-    :caption => SecureRandom.hex(6)
+    :caption => SecureRandom.hex(6),
+    :state => 'published'
   )
 end
