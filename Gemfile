@@ -52,3 +52,4 @@ gem "slim-rails"
 ruby "2.3.1"
 gem 'kaminari'
 gem 'aasm', '~> 4.1.0'
+gem 'bcrypt', '3.1.11'

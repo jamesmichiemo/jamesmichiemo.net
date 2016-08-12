@@ -1,5 +1,5 @@
 class Admin::PiecesController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
 
   # GET /pieces
