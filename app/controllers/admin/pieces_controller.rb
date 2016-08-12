@@ -62,6 +62,25 @@ class Admin::PiecesController < ApplicationController
     end
   end
 
+  def publish
+    @piece = Piece.find(params[:id])
+    if @piece.publish_and_save
+      redirect_to edit_admin_piece_path(@piece),
+                  notice: 'Piece published!'
+    else
+      redirect_to edit_admin_piece_path(@piece),
+                  alert: 'Piece was not published!'
+    end
+  end
+ 
+  def unpublish
+    @piece = Piece.find(params[:id])
+    if @piece.unpublish_and_save
+      redirect_to edit_admin_piece_path(@piece),
+                  notice: 'Piece unpublished!'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_piece

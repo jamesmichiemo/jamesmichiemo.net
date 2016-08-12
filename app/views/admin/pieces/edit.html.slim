@@ -1,8 +1,10 @@
 h1 Editing piece
 
-== render 'form'
+.btn = publish_button(@piece)
 
-= link_to 'Show', @piece
+= render 'form'
+
+= link_to 'Show', admin_piece_path(@piece)
 '|
-= link_to 'Back', pieces_path
+= link_to 'Back', admin_pieces_path
 

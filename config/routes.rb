@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     root to: 'pieces#index'
 
     resources :pieces do
-      # put :unpublish, :on => :member
-      # put :publish,  :on => :member
+      put :unpublish, :on => :member
+      put :publish,  :on => :member
     end
 
     resources :sessions, :only => [:new, :create, :destroy]
