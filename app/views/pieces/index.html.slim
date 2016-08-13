@@ -2,20 +2,9 @@ iframe src="#{@video_stream.url}" height="720" width="1280" frameborder="0" scro
 
 h1 #{Time.now}
 
-table id="pieces"
-  thead
-    tr
-      th Photo
-      th Video
-      th Audio
-      th Words
-      th Caption
-      th
-      th
-      th
-
+table id="pieces" class="grid gallery"
   tbody class="page"
     = render @pieces
+  
 br
-
 = paginate @pieces
