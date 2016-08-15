@@ -1,4 +1,25 @@
 iframe src="#{@video_stream.url}" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"
+br
+.hamburger
+  i class="fa fa-bars" aria-hidden="true"
+br
+nav
+  ul
+    li
+      a
+        = 'all'
+    li
+      a
+        = 'photo'
+    li
+      a
+        = 'video'
+    li
+      a
+        = 'audio'
+    li
+      a
+        = 'text'
 
 h1 #{Time.now}
 

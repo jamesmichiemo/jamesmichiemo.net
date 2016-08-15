@@ -13,3 +13,31 @@ table {
   margin-right: auto;
 }
 
+nav ul {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+li {
+  display: inline;
+}
+
+.hamburger i {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1%;
+  display: none
+}
+
+
+@media (max-width : 320px) {
+  .hamburger i {
+    display: block;
+  }
+  nav {
+    display: none;
+  }
+}
