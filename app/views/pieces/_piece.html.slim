@@ -1,8 +1,8 @@
-- @pieces.each do |piece|
-  tr class="piece"
-    td = piece.photo
-    td = piece.video
-    td = piece.audio
-    td = piece.words
-    td = piece.caption
-    td = link_to 'Show', piece
+/* - @pieces.each do |piece| */
+tr class="piece" data-id="#{piece.id}"
+  td = piece.photo
+  td = piece.video
+  td = piece.audio
+  td = piece.words
+  td = piece.caption
+  td = link_to 'Show', piece
