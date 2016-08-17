@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
       return true
     end
   end
+
+  def stream_video
+    @video_stream = VideoStream.first
+  end
 end

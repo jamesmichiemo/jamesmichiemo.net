@@ -1,15 +1,25 @@
 class PiecesController < ApplicationController
+  before_action :stream_video
+
   # GET /pieces
   # GET /pieces.json
   def index
-    @video_stream = VideoStream.first
-    @pieces = Piece.published.order(:created_at).page(params[:page])
+    if params[:id]
+      @pieces = Piece.published.where('id < ?', params[:id]).limit(5)
+    else
+      @pieces = Piece.published.limit(5)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   # GET /pieces/1
   # GET /pieces/1.json
   def show
-    @video_stream = VideoStream.first
     @piece = Piece.published.find(params[:id])
   end
 end
