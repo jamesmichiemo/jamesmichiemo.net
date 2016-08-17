@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title
+      | Toyan
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+ 
+    iframe src="#{@video_stream.url}" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"
+    br
+    .hamburger
+      i class="fa fa-bars" aria-hidden="true"
+    br
+
+    = yield

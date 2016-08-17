@@ -1,6 +1,6 @@
 class Piece < ApplicationRecord
   include AASM
-
+  default_scope { order('created_at DESC') }
   # mount_uploader :audio, AudioUploader
   # mount_uploader :photo, PhotoUploader
 

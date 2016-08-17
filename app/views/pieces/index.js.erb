@@ -1,1 +1,1 @@
-$("#pieces").append("<tbody class='page'><%= escape_javascript(render(@pieces)) %></tbody>");
+$('.collection').append('<%= escape_javascript(render(:partial => @pieces)) %>')

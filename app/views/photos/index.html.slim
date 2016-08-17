@@ -5,7 +5,7 @@
         a href="#{pieces_path}" up-target='.gallery' class='line'
           = 'all'
       li
-        a href="#{photos_path}" up-target='.gallery' class='line'
+        a
           = 'photo'
       li
         a
@@ -14,12 +14,11 @@
         a
           = 'audio'
 
-
   h1 #{Time.now}
 
   table id="pieces" class="grid collection"
     tbody class="page"
-      = render @pieces
+      p = '========Photos go here========'
   table class="grid load-more-collection"
     tbody class="page"
 

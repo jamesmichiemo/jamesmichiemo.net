@@ -12,6 +12,7 @@
  *
  *= require font-awesome-4.6.3/css/font-awesome.min.css
  *= require cutestrap.scss
+ *= require unpoly
  *= require_tree .
  *= require_self
  */
