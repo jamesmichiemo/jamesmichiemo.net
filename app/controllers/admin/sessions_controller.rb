@@ -1,5 +1,7 @@
 class Admin::SessionsController < ApplicationController
   before_action :save_login_state, only: [:new, :create]
+  before_action :stream_video
+
 
   def new
   end
