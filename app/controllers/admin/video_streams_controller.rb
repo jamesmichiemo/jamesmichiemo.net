@@ -1,6 +1,7 @@
 class Admin::VideoStreamsController < ApplicationController
   before_action :authenticate_user
   before_action :set_video_stream, only: [:show, :edit, :update]
+  before_action :collect_messages  
 
   def show
   end

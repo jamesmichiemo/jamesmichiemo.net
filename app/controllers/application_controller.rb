@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
   def stream_video
     @video_stream = VideoStream.first
   end
+
+  def collect_messages
+    @messages = Message.all
+  end
 end

@@ -8,11 +8,9 @@ html
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
- 
-    iframe src="#{@video_stream.url}" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"
-    br
-    .hamburger
-      i class="fa fa-bars" aria-hidden="true"
-    br
-
+    #messages
+      = render @messages
+    form
+      label Converse:
+      input type='text' data-behavior='space_curator'
     = yield
