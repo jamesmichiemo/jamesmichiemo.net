@@ -2,7 +2,7 @@ class Piece < ApplicationRecord
   include AASM
   default_scope { order('created_at DESC') }
   # mount_uploader :audio, AudioUploader
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   #  MP3_CONTENT_TYPES = %w(
   #    application/x-mp3
