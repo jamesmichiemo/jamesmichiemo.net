@@ -10,7 +10,6 @@ require 'securerandom'
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :video => SecureRandom.hex(6),
     :state => 'published'
   )
@@ -18,7 +17,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :audio => SecureRandom.hex(6),
     :state => 'published'
   )
@@ -26,7 +24,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :words => SecureRandom.hex(6),
     :state => 'published'
   )
@@ -34,7 +31,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :caption => SecureRandom.hex(6),
     :state => 'unpublished'
   )
@@ -42,7 +38,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :video => SecureRandom.hex(6),
     :audio => SecureRandom.hex(6),
     :words => SecureRandom.hex(6),
@@ -53,14 +48,12 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :state => 'published'
   )
 end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :video => SecureRandom.hex(6),
     :state => 'published'
   )
@@ -68,7 +61,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :audio => SecureRandom.hex(6),
     :state => 'published'
   )
@@ -76,7 +68,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :words => SecureRandom.hex(6),
     :state => 'published'
   )
@@ -86,7 +77,6 @@ end
 
 5.times do
   Piece.create(
-    :photo => SecureRandom.hex(6),
     :caption => SecureRandom.hex(6),
     :state => 'published'
   )

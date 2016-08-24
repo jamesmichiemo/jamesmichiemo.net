@@ -7,7 +7,17 @@ class Admin::PiecesController < ApplicationController
   # GET /pieces
   # GET /pieces.json
   def index
-    @pieces = Piece.order(:created_at).page(params[:page])
+    if params[:id]
+      @pieces = Piece.where('id < ?', params[:id]).limit(5)
+    else
+      @pieces = Piece.limit(5)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   # GET /pieces/1

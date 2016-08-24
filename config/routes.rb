@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   resources :pieces, :only => [:index, :show]
   resources :photos, :only => [:index]
 
-  root 'welcome#index'
+  root 'pieces#index'
 end

@@ -1,6 +1,6 @@
-/* - @pieces.each do |piece| */
 tr class="piece" data-id="#{piece.id}"
-  td = piece.photo
+  td 
+    = image_tag piece.photo if piece.photo?
   td = piece.video
   td = piece.audio
   td = piece.words
