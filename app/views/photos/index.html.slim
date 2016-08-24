@@ -18,12 +18,12 @@
 
   table id="pieces" class="grid collection"
     tbody class="page"
-      p = '========Photos go here========'
+      = render @pieces
   table class="grid load-more-collection"
     tbody class="page"
 
     = image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif"
-    = link_to "Load More", pieces_path, class: "load-more", :up => { :target => '.gallery' }
+    = link_to "Load More", photos_path, class: "load-more", :up => { :target => '.gallery' } if @pieces.count > 4
     javascript:
 			$('a.load-more').on('click', function(e) {
 				var last_id;

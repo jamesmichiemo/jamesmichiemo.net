@@ -42,6 +42,22 @@ class Piece < ApplicationRecord
     self.words.present?
   end
 
+  def has_photo?
+    self.photo.present?
+  end
+
+  def has_video?
+    self.video.present?
+  end
+
+  def has_audio?
+    self.audio.present?
+  end
+
+  def has_words?
+    self.words.present?
+  end
+
   # def self.text_search(query)
   #   if query.present?
   #     where("photo ILIKE :q OR video ILIKE :q OR audio ILIKE :q" \
