@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :pieces, :only => [:index, :show]
   resources :photos, :only => [:index]
+  resources :audio, :only => [:index]
 
   root 'pieces#index'
 end
