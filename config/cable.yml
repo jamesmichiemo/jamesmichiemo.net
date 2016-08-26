@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://pub-redis-11625.us-east-1-3.7.ec2.redislabs.com:11625
