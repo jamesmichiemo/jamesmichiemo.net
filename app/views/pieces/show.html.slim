@@ -8,7 +8,7 @@ p
   = @piece.video
 p
   strong Audio:
-  = audio_tag @piece.audio, preload: true, id: 'audioPlayer', controls: true
+  = audio_tag @piece.audio, preload: true, id: 'audioPlayer', controls: true if @piece.audio?
 p
   strong Words:
   = @piece.words
