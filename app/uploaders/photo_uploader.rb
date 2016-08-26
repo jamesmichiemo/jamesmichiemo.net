@@ -46,9 +46,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
     # Override the filename of the uploaded files:
     # Avoid using model.id or version_name here, see uploader/store.rb for details.
-    def filename
-      "#{model.id}-original.jpg" 
-    end
+    # def filename
+    #   "#{model.id}-original.jpg" 
+    # end
   else
     storage :file
   end  # Override the directory where uploaded files will be stored.
