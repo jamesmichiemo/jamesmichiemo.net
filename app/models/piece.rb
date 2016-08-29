@@ -2,9 +2,8 @@ class Piece < ApplicationRecord
   has_many :pictures
 
   include AASM
-  default_scope { order('created_at DESC') }
+  default_scope { order('pieces.id DESC') }
   mount_uploader :audio, AudioUploader
-  mount_uploader :photo, PhotoUploader
 
   #  MP3_CONTENT_TYPES = %w(
   #    application/x-mp3
@@ -38,14 +37,14 @@ class Piece < ApplicationRecord
   end
 
   def publishable?
-    self.photo.present? || 
+    self.pictures.present? || 
     self.video.present? ||
     self.audio.present? ||
     self.words.present?
   end
 
-  def has_photo?
-    self.photo.present?
+  def has_pictures?
+    self.pictures.present?
   end
 
   def has_video?
@@ -59,14 +58,4 @@ class Piece < ApplicationRecord
   def has_words?
     self.words.present?
   end
-
-  # def self.text_search(query)
-  #   if query.present?
-  #     where("photo ILIKE :q OR video ILIKE :q OR audio ILIKE :q" \
-  #           "words ILIKE :q OR captions ILIKE :q", \
-  #            q: "%#{query}%")
-  #   else
-  #     self.none
-  #   end
-  # end
 end

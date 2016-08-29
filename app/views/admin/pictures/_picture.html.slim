@@ -1,0 +1,18 @@
+p
+  strong
+    = 'Picture:'
+  = image_tag picture.image
+p
+  strong
+    = 'Caption:'
+  = picture.caption
+p
+  strong
+    = 'Row:'
+  = picture.row
+
+p = link_to 'Edit', edit_admin_piece_picture_path(picture.piece, picture)
+p = link_to 'Destroy Pic', [:admin, picture.piece, picture],
+             method: :delete,
+             data: { confirm: 'Are you sure?' }
+

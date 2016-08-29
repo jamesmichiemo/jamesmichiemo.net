@@ -17,7 +17,7 @@ class PiecesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create piece" do
     assert_difference('Piece.count') do
-      post pieces_url, params: { piece: { audio: @piece.audio, caption: @piece.caption, photo: @piece.photo, video: @piece.video, words: @piece.words } }
+      post pieces_url, params: { piece: { audio: @piece.audio, caption: @piece.caption, video: @piece.video, words: @piece.words } }
     end
 
     assert_redirected_to piece_url(Piece.last)
@@ -34,7 +34,7 @@ class PiecesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update piece" do
-    patch piece_url(@piece), params: { piece: { audio: @piece.audio, caption: @piece.caption, photo: @piece.photo, video: @piece.video, words: @piece.words } }
+    patch piece_url(@piece), params: { piece: { audio: @piece.audio, caption: @piece.caption, video: @piece.video, words: @piece.words } }
     assert_redirected_to piece_url(@piece)
   end
 
