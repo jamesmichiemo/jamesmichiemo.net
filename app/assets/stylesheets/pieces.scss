@@ -7,7 +7,7 @@ iframe {
   width: 100%;
 }
 
-table {
+ol {
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -40,4 +40,14 @@ li {
   nav {
     display: none;
   }
+}
+
+figure {
+  padding: 0 1em;
+  max-width: 33em;
+}
+
+img {
+  display: block;
+  width: 100%
 }
