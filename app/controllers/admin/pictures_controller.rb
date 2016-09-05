@@ -10,7 +10,15 @@ class Admin::PicturesController < ApplicationController
   def create
     @piece = Piece.find(params[:piece_id])
     @picture = @piece.pictures.create(picture_params)
-    redirect_to edit_admin_piece_path(@piece)
+    respond_to do |format|
+      if @picture.save
+        format.html { redirect_to edit_admin_piece_path(@piece), notice: 'Picture was successfully created.' }
+        format.json { render :edit, status: :created, location: @piece }
+      else
+        format.html { render :new, error: 'Try again.' } 
+        format.json { render json: @picture.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
