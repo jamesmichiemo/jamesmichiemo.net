@@ -2,6 +2,24 @@ h1 Editing piece
 
 .btn = publish_button(@piece)
 
+h2 Pictures
+= render @piece.pictures
+      
+h2 Add a picture 
+= form_for [:admin, @piece, @piece.pictures.build] do |f|
+  p
+    = f.label :image
+    = f.file_field :image
+  p
+    = f.label :caption
+    = f.text_field :caption
+  p
+    = f.label :row
+    = f.select :row, options_for_select((1..10).to_a)
+
+  p
+    = f.submit
+
 = render 'form'
 
 = link_to 'Show', admin_piece_path(@piece)

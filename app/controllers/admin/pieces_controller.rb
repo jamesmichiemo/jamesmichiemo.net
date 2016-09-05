@@ -18,6 +18,16 @@ class Admin::PiecesController < ApplicationController
   # GET /pieces/new
   def new
     @piece = Piece.new
+    respond_to do |format|
+      if @piece.save
+        format.html { redirect_to edit_admin_piece_path(@piece), notice: 'Piece was successfully created.' }
+        format.json { render :edit, status: :created, location: @piece }
+      else
+        format.html { render :new }
+        format.json { render json: @piece.errors, status: :unprocessable_entity }
+      end
+    end
+ 
   end
 
   # GET /pieces/1/edit
@@ -26,19 +36,19 @@ class Admin::PiecesController < ApplicationController
 
   # POST /pieces
   # POST /pieces.json
-  def create
-    @piece = Piece.new(piece_params)
+  # def create
+  #   @piece = Piece.new(piece_params)
 
-    respond_to do |format|
-      if @piece.save
-        format.html { redirect_to admin_piece_path(@piece), notice: 'Piece was successfully created.' }
-        format.json { render :show, status: :created, location: @piece }
-      else
-        format.html { render :new }
-        format.json { render json: @piece.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @piece.save
+  #       format.html { redirect_to edit_admin_piece_path(@piece), notice: 'Piece was successfully created.' }
+  #       format.json { render :edit, status: :created, location: @piece }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @piece.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /pieces/1
   # PATCH/PUT /pieces/1.json
@@ -89,12 +99,8 @@ class Admin::PiecesController < ApplicationController
       @piece = Piece.find(params[:id])
     end
 
-    def set_video_stream
-      @video_stream = VideoStream.find(1)
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def piece_params
-      params.require(:piece).permit(:photo, :video, :audio, :words, :caption)
+      params.require(:piece).permit(:video, :audio, :words, :caption)
     end
 end

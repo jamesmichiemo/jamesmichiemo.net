@@ -13,4 +13,6 @@ html
     form
       label Converse:
       input type='text' data-behavior='space_curator'
+    - flash.each do |key, value|
+        div class=("alert alert-#{key}") = value
     = yield

@@ -5,8 +5,8 @@
         a href="#{pieces_path}" up-target='.gallery' class='line'
           = 'all'
       li
-        a href="#{photos_path}" up-target='.gallery' class='line'
-          = 'photo'
+        a href="#{pictures_path}" up-target='.gallery' class='line'
+          = 'pic'
       li
         a
           = 'video'
@@ -24,7 +24,7 @@
     tbody class="page"
 
     = image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif"
-    = link_to "Load More", photos_path, class: "load-more", :up => { :target => '.gallery' } if @pieces.count > 4
+    = link_to "Load More", pictures_path, class: "load-more", :up => { :target => '.gallery' } if @pieces.count > 4
     javascript:
 			$('a.load-more').on('click', function(e) {
 				var last_id;

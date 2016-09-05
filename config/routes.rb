@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :pieces do
       put :unpublish, :on => :member
       put :publish,  :on => :member
+      resources :pictures
     end
 
     resources :sessions, :only => [:new, :create, :destroy]
@@ -16,9 +17,12 @@ Rails.application.routes.draw do
     resources :video_streams
   end
 
-  resources :pieces, :only => [:index, :show]
-  resources :photos, :only => [:index]
+  resources :pieces, :only => [:index, :show] do
+    resources :pictures
+  end
+
   resources :audio, :only => [:index]
+  resources :pictures
 
   root 'pieces#index'
 end

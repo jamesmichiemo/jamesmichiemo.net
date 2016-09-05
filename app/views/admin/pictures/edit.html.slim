@@ -1,0 +1,17 @@
+h1 Editing pic
+
+= form_for [:admin, @piece, @picture], :html => {:multipart => true} do |f|
+  - if @picture.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@picture.errors.count, "error")} prohibited this picture from being saved:"
+      ul
+        - @picture.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :caption
+    = f.text_area :caption
+  .field
+    = f.label :row
+    = f.select :row, options_for_select((1..10).to_a)
+  .actions = f.submit
