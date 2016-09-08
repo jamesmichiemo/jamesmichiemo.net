@@ -1,0 +1,75 @@
+:root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}
+
+html body {
+  font: 1em/1.6 monospace;
+  font-color: blue;
+}
+
+/* Now you can utilize the root em unit based on the value calculated by :root */
+body {
+  font: 1em/1.6 sans-serif;
+}
+
+h1, figcaption {
+  text-align: center;
+}
+
+.initiative {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#content {
+  flex: 1;
+}
+
+ol{  
+  margin-bottom: 20vh;
+
+}
+.load-more {
+  float: right;
+  padding-bottom: 60px;
+}
+
+footer {
+  background-color: white;
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  width: 100vw;
+}
+
+nav, main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+nav ul {
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 3vw;
+  text-decoration: underline;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  font-color: blue;
+}
