@@ -2,17 +2,23 @@ doctype html
 html
   head
     title
-      | Toyan
+      | James Michiemo 
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body
-    #messages
-      = render @messages
-    form
-      label Converse:
-      input type='text' data-behavior='space_curator'
-    - flash.each do |key, value|
-        div class=("alert alert-#{key}") = value
+    = favicon_link_tag 'favicon.ico'
+  body class='initiative'
+    header class='gallery-header'
+      section id='discourse'
+        #messages
+          = render @messages
+        form
+          label for='chat' Converse:
+          input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat'
+        - flash.each do |key, value|
+            div class=("alert alert-#{key}") = value
+
+      h1 tabindex='2' #{Time.now.strftime("%Y-%j %H:%M")}
+
     = yield
