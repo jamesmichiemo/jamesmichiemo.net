@@ -63,3 +63,5 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'neat'
 gem 'bourbon'
+gem 'trix'
+
