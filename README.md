@@ -16,4 +16,4 @@ Usage:
 
 ## Supported Ruby versions
 
-```2.3.1```
+* 2.3.1
