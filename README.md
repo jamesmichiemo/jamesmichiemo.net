@@ -1,24 +1,19 @@
-# README
+# jamesmichiemo.net 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+Install dependencies:
 
-* Ruby version
+    $ bundle
 
-* System dependencies
+Run database migrations:
 
-* Configuration
+    $ rake db:setup 
 
-* Database creation
+Usage:
 
-* Database initialization
+    $ rails s
 
-* How to run the test suite
+## Supported Ruby versions
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```2.3.1```
