@@ -1,14 +1,11 @@
 p
-  strong
-    = 'Picture:'
+  strong = 'Picture:'
   = image_tag picture.image
 p
-  strong
-    = 'Caption:'
-  = picture.caption
+  strong = 'Caption:'
+  = picture.caption.html_safe
 p
-  strong
-    = 'Row:'
+  strong = 'Row:'
   = picture.row
 
 p = link_to 'Edit', edit_admin_piece_picture_path(picture.piece, picture)

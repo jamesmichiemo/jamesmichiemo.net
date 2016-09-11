@@ -10,7 +10,7 @@ h1 Editing pic
 
   .field
     = f.label :caption
-    = f.text_area :caption
+    = f.trix_editor :caption
   .field
     = f.label :row
     = f.select :row, options_for_select((1..10).to_a)
