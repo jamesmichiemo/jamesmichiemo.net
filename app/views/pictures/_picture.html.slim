@@ -3,8 +3,8 @@ figure
     #{picture.image.medium.url} 960w, \
       #{picture.image.small.url} 480w", 
 	sizes: "(max-width: 40em) 100vw, 50vw", 
-	alt: "#{picture.caption}",
+	alt: "#{strip_tags picture.caption}",
 	tabindex: '3'
     	
-  figcaption = picture.caption 
+  figcaption = picture.caption.html_safe
  

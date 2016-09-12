@@ -8,8 +8,7 @@ feature "Add a picture to a piece", :type => :feature do
   scenario "Upload pic" do
     piece = FactoryGirl.create(:piece)
     visit edit_admin_piece_path(piece)
-    save_and_open_page
-    fill_in 'picture_caption', with: 'it works!'
+    first('input#picture_caption_trix_input_picture', visible: false).set('telekinesis')
     click_on 'Create Picture'
     expect(page).to have_text("Picture was successfully created.")
   end

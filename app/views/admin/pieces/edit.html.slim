@@ -12,7 +12,7 @@ h2 Add a picture
     = f.file_field :image
   p
     = f.label :caption
-    = f.text_field :caption
+    = f.trix_editor :caption
   p
     = f.label :row
     = f.select :row, options_for_select((1..10).to_a)
