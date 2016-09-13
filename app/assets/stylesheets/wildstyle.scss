@@ -12,7 +12,7 @@ body {
   font: 1em/1.6 sans-serif;
 }
 
-h1, figcaption {
+h1, figcaption, .load {
   text-align: center;
   float: none;
 }
@@ -27,13 +27,8 @@ h1, figcaption {
   flex: 1;
 }
 
-ol{  
+ol, .load {  
   margin-bottom: 30vh;
-}
-
-.load-more {
-  float: right;
-  padding-bottom: 60px;
 }
 
 footer {
@@ -74,3 +69,4 @@ img {
 a {
   font-color: blue;
 }
+
