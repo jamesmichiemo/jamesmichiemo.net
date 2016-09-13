@@ -2,12 +2,9 @@ main id="content" class="gallery" role="main"
   section id="pieces" class="grid collection"
     ol class="page"
       = render @pieces
-  section class="grid load-more-collection"
-    ol class="page"
-
-= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif"
-
-= link_to "Load More", pieces_path, class: "load-more", :up => { :target => '.gallery' } if @pieces.count > 4
+    section class="load dolly"
+      = image_tag "ajax-loader.gif", style: "display:none;", class: "load loading-gif"
+      = link_to "Load More", pieces_path, class: "load load-more", :up => { :target => '.gallery' }, :onfocus => "this.scrollIntoView();" if @pieces.count > 4
 
 javascript:
   $('a.load-more').on('click', function(e) {
@@ -15,7 +12,9 @@ javascript:
     e.preventDefault();
     $('.load-more').hide();
     $('.loading-gif').show();
-    last_id = $('.piece').last().attr('data-id');
+    last_piece = $('.piece').last();
+    last_id = last_piece.attr('data-id');
+    last_piece.attr('id','next-'+last_id);
     $.ajax({
       type: 'GET',
       url: $(this).attr('href'),
@@ -25,7 +24,8 @@ javascript:
       dataType: 'script',
       success: function() {
 	$('.loading-gif').hide();
-	$('.load-more').show();
+        $('.load-more').show();
+        $('#next-'+last_id+' img').focus();
       }
     });
   });
@@ -34,11 +34,11 @@ footer
   nav
     ul
       li
-        a href="#{pieces_path}" up-target='.gallery' class='line'  all
+        a href="#{pieces_path}" up-target='.gallery' class='line' onclick="$('#chat').focus();" all
       li
         a href="#" up-target='.gallery' id='words' class='line' style="color:#ababab;" words
       li
-        a href="#{pictures_path}" up-target='.gallery' class='line' pics
+        a href="#{pictures_path}" up-target='.gallery' class='line' onclick="$('#chat').focus();" pics
       li
         a href="#" up-target='.gallery' id='audio' class='line' style="color:#ababab;" audio
       li
