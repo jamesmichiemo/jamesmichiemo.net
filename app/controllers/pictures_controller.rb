@@ -9,12 +9,6 @@ class PicturesController < ApplicationController
     else
       @pieces = Piece.includes(:pictures).published.where.not(:pictures => { :id => nil }).limit(5)
     end
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
-
   end
 
   # GET /pieces/1

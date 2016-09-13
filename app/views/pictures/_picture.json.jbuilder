@@ -1,0 +1,2 @@
+json.array! piece.pictures
+
