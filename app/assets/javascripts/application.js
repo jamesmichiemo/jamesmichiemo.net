@@ -14,5 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require trix
+//= require jstz.min
+//= require moment
+//= require moment-timezone
+//= require clock
 //= require_tree .
 //= require unpoly
