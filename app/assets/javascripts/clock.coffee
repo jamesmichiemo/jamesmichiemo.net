@@ -10,6 +10,7 @@ $ ->
 
   # Localize UTC time
   current_timezone = sessionStorage.getItem('timezone')
+  console.log current_timezone
   timezone_time = moment_time.tz(current_timezone)
   formatted_time = timezone_time.format('h:mm a')
 
