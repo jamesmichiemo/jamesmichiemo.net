@@ -16,7 +16,7 @@
 //= require trix
 //= require jstz.min
 //= require moment
-//= require moment-timezone
+//= require moment-timezone-with-data-2010-2020
 //= require clock
 //= require_tree .
 //= require unpoly
