@@ -5,14 +5,11 @@ $ ->
     sessionStorage.setItem 'timezone', tz.name()
 
   # Get UTC time
-  utc_clock = $('header div').text()
-  moment_time = moment(utc_clock)
+  moment_time = moment.utc()
 
   # Localize UTC time
   current_timezone = sessionStorage.getItem('timezone')
-  console.log current_timezone
   timezone_time = moment_time.tz(current_timezone)
-  console.log timezone_time
   formatted_time = timezone_time.format('h:mm a')
 
   # Display localized time

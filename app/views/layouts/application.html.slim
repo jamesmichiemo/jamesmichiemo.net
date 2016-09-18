@@ -19,7 +19,7 @@ html
         - flash.each do |key, value|
             div class=("alert alert-#{key}") = value
 
-      h1 tabindex='2' #{Time.now.strftime("%H:%M")}
+      h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
       div style='display:none' #{Time.now}
 
     = yield
