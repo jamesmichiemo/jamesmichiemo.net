@@ -33,7 +33,7 @@ ol, .load {
 }
 
 footer {
-  background-color: white;
+  background-color: #fff;
   bottom: 0;
   position: fixed;
   right: 0;
@@ -84,5 +84,8 @@ a {
     transform: translate(-30%,50%) rotate(0.75turn); 
     font-size: 0.75rem;
   }
+  header {
+    @include span-columns(6);
+    @include shift(3);
+  }
 }
-
