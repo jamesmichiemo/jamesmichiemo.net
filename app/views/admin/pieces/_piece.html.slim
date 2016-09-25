@@ -2,7 +2,7 @@ tr class="piece" data-id="#{piece.id}"
   td = render piece.pictures
   td = piece.video
   td = audio_tag piece.audio, preload: true, controls: true if piece.audio?
-  td = piece.words
+  td = render piece.words
   td = piece.caption
   td = link_to 'Edit', edit_admin_piece_path(piece)
   td = link_to 'Show', admin_piece_path(piece)

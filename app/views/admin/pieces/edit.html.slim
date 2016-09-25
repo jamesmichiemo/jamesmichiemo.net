@@ -2,10 +2,23 @@ h1 Editing piece
 
 .btn = publish_button(@piece)
 
+h2 Words
+= render @piece.words 
+
+h2 Add Words 
+= form_for [:admin, @piece, @piece.words.build] do |f|
+  p
+    = f.label :paragraph
+    = f.trix_editor :paragraph
+
+  p
+    = f.submit
+
+
 h2 Pictures
 = render @piece.pictures
       
-h2 Add a picture 
+h2 Add Pictures 
 = form_for [:admin, @piece, @piece.pictures.build] do |f|
   p
     = f.label :image
