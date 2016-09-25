@@ -1,5 +1,6 @@
 class Piece < ApplicationRecord
   has_many :pictures
+  has_many :words
 
   include AASM
   default_scope { order('pieces.id DESC') }
