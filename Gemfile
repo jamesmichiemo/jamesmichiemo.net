@@ -37,6 +37,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'launchy'
+  gem 'faker'
 end
 
 group :development do
