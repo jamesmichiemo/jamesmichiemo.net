@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       put :unpublish, :on => :member
       put :publish,  :on => :member
       resources :pictures
+      resources :words
     end
 
     resources :sessions, :only => [:new, :create, :destroy]
@@ -19,10 +20,12 @@ Rails.application.routes.draw do
 
   resources :pieces, :only => [:index, :show] do
     resources :pictures
+    resources :words
   end
 
   resources :audio, :only => [:index]
   resources :pictures
+  resources :words
 
   root 'pieces#index'
 end
