@@ -34,11 +34,11 @@ footer
   nav
     ul
       li
-        a href="#{pieces_path}" up-target='.gallery' class='line' onclick="$('#chat').focus();" all
+        a href="#{pieces_path}" up-target='.gallery' up-follow='' class='line' onclick="$('#chat').focus();" all
       li
-        a href="#{words_path}" up-target='.gallery' id='words' class='line' style="color:#ababab;" words
+        a href="#{words_path}" up-target='.gallery' up-follow='' id='words' class='line' onclick="$('#chat').focus();" words
       li
-        a href="#{pictures_path}" up-target='.gallery' class='line' onclick="$('#chat').focus();" pics
+        a href="#{pictures_path}" up-target='.gallery' up-follow='' class='line' onclick="$('#chat').focus();" pics
       li
         a href="#" up-target='.gallery' id='audio' class='line' style="color:#ababab;" audio
       li

@@ -74,6 +74,10 @@ a {
   }
 }
 
+.up-current, .up-active {
+  text-decoration: underline;
+}
+
 section p {
   text-indent: 5ch;
   margin: 0;
@@ -96,5 +100,4 @@ section p {
     font-size: 0.7rem;
   }
 }
-
 
