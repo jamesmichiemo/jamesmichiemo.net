@@ -1,6 +1,7 @@
 li class="piece" data-id="#{piece.id}"
   article 
     = render piece.pictures
+    = render piece.words
     / = render piece.videos
     / = render piece.audio audio_tag piece.audio, preload: true, controls: true if piece.audio?
     / = render piece.words

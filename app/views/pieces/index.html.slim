@@ -4,7 +4,7 @@ main id="content" class="gallery" role="main"
       = render @pieces
     section class="load dolly"
       = image_tag "ajax-loader.gif", style: "display:none;", class: "load loading-gif"
-      = link_to "Load More", pieces_path, class: "load load-more", :up => { :target => '.gallery' }, :onfocus => "this.scrollIntoView();" if @pieces.count > 4
+      = link_to "Load More", pieces_path, class: "load load-more", tabindex: 3, :up => { :target => '.gallery' }, :onfocus => "this.scrollIntoView();" if @pieces.count > 4
 
 javascript:
   $('a.load-more').on('click', function(e) {
