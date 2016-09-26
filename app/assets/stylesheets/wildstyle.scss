@@ -92,7 +92,7 @@ section p {
     transform: translate(-30%,50%) rotate(0.75turn); 
     font-size: 0.5rem;
   }
-  header, article, .load.dolly {
+  header, ol li, .load.dolly {
     @include span-columns(6);
     @include shift(3);
   }
