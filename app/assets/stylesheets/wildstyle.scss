@@ -31,6 +31,10 @@ ol, .load {
   margin-bottom: 30vh;
 }
 
+.load {
+  margin-top: 10vh;
+}
+
 footer {
   background-color: #fff;
   bottom: 0;
@@ -74,17 +78,27 @@ a {
   }
 }
 
+section p {
+  text-indent: 5ch;
+  margin: 0;
+}
+
 .name { text-align: center; }
-@media (min-width: 40rem) {
+@media (min-width: 61.5rem) {
   .name {
     position: fixed;
     top: 40%;
     left: 0;
     transform: translate(-30%,50%) rotate(0.75turn); 
-    font-size: 0.75rem;
+    font-size: 0.5rem;
   }
-  header {
+  header, article, .load.dolly {
     @include span-columns(6);
     @include shift(3);
   }
+  section p {
+    font-size: 0.7rem;
+  }
 }
+
+
