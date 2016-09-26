@@ -2,13 +2,9 @@
   font-size: calc(1vw + 1vh + .5vmin);
 }
 
-html body {
+html body, input, textarea {
   font: 1rem/1.6 monospace;
-  font-color: blue;
-}
-
-body {
-  font: 1rem/1.6 sans-serif;
+  color: $base-font-color;
 }
 
 h1, figcaption, .load {
