@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   end
 
   resources :audio, :only => [:index]
-  resources :pictures
-  resources :words
+  resources :pictures, :only => [:index, :show]
+  resources :words, :only => [:index, :show]
 
   root 'pieces#index'
 end

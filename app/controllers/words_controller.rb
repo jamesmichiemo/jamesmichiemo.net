@@ -1,8 +1,8 @@
 class WordsController < ApplicationController
   before_action :collect_messages
 
-  # GET /pieces
-  # GET /pieces.json
+  # GET /words
+  # GET /words.json
   def index
     if params[:id]
       @pieces = Piece.includes(:words).published.where('id < ?', params[:id]).where.not(:words => { :id => nil }).limit(5)
@@ -11,8 +11,8 @@ class WordsController < ApplicationController
     end
   end
 
-  # GET /pieces/1
-  # GET /pieces/1.json
+  # GET /words/1
+  # GET /words/1.json
   def show
     @piece = Piece.includes(:words).published.where.not(:words => { :id => nil }).find(params[:id])
   end
