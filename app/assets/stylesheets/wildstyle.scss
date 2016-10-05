@@ -1,9 +1,56 @@
+@keyframes animatedCursor {
+  0%, 100% {
+    left: -80px;
+  }
+  50% {
+    left: -75px;
+  }
+}
+
+div img, .cursor { 
+  display: none;
+  position: absolute; 
+  top: 10px;
+  max-width: 50px;
+  animation: animatedCursor 0.4s infinite;
+}
+
+li div .cursor {
+}
+
+:focus + img { display: block; }
+
 :root {
   font-size: calc(1vw + 1vh + .5vmin);
 }
 
+.article-footer {
+  margin-top: 2rem;
+  margin-bottom: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-button {
+  font-size: 0.7rem;
+  width: 30%;
+  max-width: 50%;
+  text-align: center;
+  border: 2px solid $base-font-color;
+  height: 44px;
+  line-height: 40px;
+}
+
+
+.article-button-permalink:hover {
+  color: #fff;
+  background-color: $base-font-color;
+  text-decoration: none;
+}
+
 html body, input, textarea {
-  font: 1rem/1.6 monospace;
+  font: 1rem/1.5 monospace;
   color: $base-font-color;
 }
 
@@ -31,7 +78,7 @@ ol, .load {
   margin-top: 10vh;
 }
 
-footer {
+footer.gallery-footer {
   background-color: #fff;
   bottom: 0;
   position: fixed;
@@ -61,7 +108,7 @@ nav ul li {
   padding: 3vw;
 }
 
-img {
+figure img:not(.cursor) {
   width: 100%;
 }
 

@@ -13,6 +13,12 @@ $ ->
   formatted_time = timezone_time.format('h:mm a')
 
   # Display localized time
-  $('header h1').hide()
-  $('header').append('<h1 tabindex="2">'+formatted_time+'</h1>')
+  $('header .watch h1').hide()
+  $('header .watch').prepend('<h1 tabindex="2">'+formatted_time+'</h1>')
+ 
+  $('.watch h1').on 'focus', (e) ->
+    $('.watch h1 + img').show()
+  $('.watch h1').on 'focusout', (e) ->
+    $('.watch h1 + img').hide()
+
 
