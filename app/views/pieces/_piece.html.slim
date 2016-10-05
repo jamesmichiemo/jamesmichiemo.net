@@ -1,8 +1,12 @@
 li class="piece" data-id="#{piece.id}"
-  article 
+  article  
     = render piece.pictures
     = render piece.words
     / = render piece.videos
     / = render piece.audio audio_tag piece.audio, preload: true, controls: true if piece.audio?
     / = render piece.words
     / = link_to 'Show', piece
+    footer style='position: relative' 
+      div class='article-footer'
+        div class="article-button article-button-permalink button" data-permalink="#{piece_url(piece)}" tabindex='3' Copy PermaLink
+        = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')

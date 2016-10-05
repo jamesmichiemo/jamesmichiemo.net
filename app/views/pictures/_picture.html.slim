@@ -1,10 +1,12 @@
-figure 
+figure style='position: relative;'
   = image_tag picture.image.medium.url, srcset: "#{picture.image.large.url} 1920w, \
     #{picture.image.medium.url} 960w, \
       #{picture.image.small.url} 480w", 
 	sizes: "(max-width: 40em) 100vw, 50vw", 
 	alt: "#{strip_tags picture.caption}",
 	tabindex: '3'
-    	
+  = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50', class: 'cursor')
+
+div style='position: relative;'
   figcaption tabindex='3' = picture.caption.html_safe
- 
+  = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50', class: 'cursor')

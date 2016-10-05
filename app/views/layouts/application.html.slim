@@ -16,11 +16,15 @@ html
           = render @messages
         form
           label for='chat' Chat:
-          input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat'
+          div style='position: relative;'
+            input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat' style='position: relative'
+            = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
+
         - flash.each do |key, value|
             div class=("alert alert-#{key}") = value
 
-      h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
-      div style='display:none' #{Time.now}
+      div class='watch' style='position: relative;'
+        h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
+        = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
 
     = yield

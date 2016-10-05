@@ -17,6 +17,8 @@
 //= require jstz.min
 //= require moment
 //= require moment-timezone-with-data-2010-2020
+//= require clipboard.min
 //= require clock
 //= require_tree .
 //= require unpoly
+
