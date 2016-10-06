@@ -18,6 +18,7 @@
 //= require moment
 //= require moment-timezone-with-data-2010-2020
 //= require clipboard.min
+//= require jquery.tabbable.min 
 //= require clock
 //= require_tree .
 //= require unpoly
