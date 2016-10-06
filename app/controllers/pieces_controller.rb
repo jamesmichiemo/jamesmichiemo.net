@@ -14,6 +14,7 @@ class PiecesController < ApplicationController
   # GET /pieces/1
   # GET /pieces/1.json
   def show
-    @piece = Piece.published.find(params[:id])
+    redirect_to pieces_path
+    #@piece = Piece.published.find(params[:id])
   end
 end
