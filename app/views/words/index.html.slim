@@ -4,7 +4,7 @@ main id="content" class="gallery" role="main"
       = render @pieces
     section class="load dolly"
       = image_tag "ajax-loader.gif", style: "display:none;", class: "load loading-gif"
-      = link_to "Load More", pictures_path, class: "load load-more", :up => { :target => '.gallery', :transition => 'move-right' }, :onfocus => "this.scrollIntoView();" if @pieces.count > 4
+      = link_to "Load More", pieces_path, class: "load load-more", :up => { :target => '.gallery', :transition => 'move-right' }, :onfocus => "this.scrollIntoView();" if @pieces.count > 4
 
 javascript:
   $('a.load-more').on('click', function(e) {
@@ -14,7 +14,7 @@ javascript:
     $('.loading-gif').show();
     last_piece = $('.piece').last();
     last_id = last_piece.attr('data-id');
-    last_piece.attr('id','next-'+last_id);
+    last_piece.attr('id','break-'+last_id);
     $.ajax({
       type: 'GET',
       url: $(this).attr('href'),
@@ -25,12 +25,15 @@ javascript:
       success: function() {
 	$('.loading-gif').hide();
         $('.load-more').show();
-        $('#next-'+last_id+' img').focus();
+        $('#break-'+last_id+' img, #break-'+last_id+' section').focus();
       }
     });
   });
 
 footer class='gallery-footer'
+  progress value='0' id='limitBreak' class='limit-break'
+    div class='limit-container'
+      span class='limit-bar'
   nav
     ul
       li 

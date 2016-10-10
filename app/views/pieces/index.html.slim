@@ -17,7 +17,7 @@ javascript:
     $('.loading-gif').show();
     last_piece = $('.piece').last();
     last_id = last_piece.attr('data-id');
-    last_piece.attr('id','next-'+last_id);
+    last_piece.attr('id','break-'+last_id);
     $.ajax({
       type: 'GET',
       url: $(this).attr('href'),
@@ -28,12 +28,15 @@ javascript:
       success: function() {
 	$('.loading-gif').hide();
         $('.load-more').show();
-        $('#next-'+last_id+' img').focus();
+        $('#break-'+last_id+' img, #break-'+last_id+' section').focus();
       }
     });
   });
 
 footer class='gallery-footer'
+  progress value='0' id='limitBreak' class='limit-break'
+    div class='limit-container'
+      span class='limit-bar'
   nav
     ul
       li 
@@ -60,4 +63,5 @@ footer class='gallery-footer'
         div style='position: relative;'
           a href="#" up-target='.gallery' id='games' class='line' style="color:#eee;" games
           = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50', class: 'cursor')
+
 
