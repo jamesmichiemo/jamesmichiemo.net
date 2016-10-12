@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 @keyframes animatedCursor {
   0%, 100% {
     left: -80px;
@@ -50,12 +52,11 @@ li div .cursor {
 }
 
 html body, input, textarea {
-  font: 1rem/1.5 monospace;
+  font: 1rem/1.5 Lato;
   color: $base-font-color;
 }
 
 h1, figcaption, .load {
-  font-family: monospace;
   text-align: center;
   float: none;
 }
