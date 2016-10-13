@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lusitana');
 
 @keyframes animatedCursor {
   0%, 100% {
@@ -52,8 +53,14 @@ li div .cursor {
 }
 
 html body, input, textarea {
-  font: 1rem/1.5 Lato;
+  font-family: $serif;
+  font-size: 1rem;
+  line-height: 1.5;
   color: $base-font-color;
+}
+
+p {
+  font-family: $sans-serif;
 }
 
 h1, figcaption, .load {
