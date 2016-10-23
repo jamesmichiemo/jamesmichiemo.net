@@ -153,12 +153,78 @@ section p {
     transform: translate(-30%,50%) rotate(0.75turn); 
     font-size: 0.5rem;
   }
-  header, ol li, .load.dolly {
+  ol li, .load.dolly {
     @include span-columns(6);
     @include shift(3);
   }
   section p {
     font-size: 0.7rem;
+  }
+
+  #discourse {
+    z-index: 3; 
+    position: fixed;
+    left: 100vw;
+    top: 10vh;
+    width: 100%;
+    transition: left 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    height: 45vh;
+    #messages {
+      overflow: scroll;
+      height: 50vh;
+    }
+    form {
+      position: absolute;
+      top: 50vh;
+    }
+  }
+
+  #toggle {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    transform: translate(-30%,50%) rotate(0.75turn); 
+    font-size: 0.5rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+  }
+
+
+  #toggle + label {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    cursor:pointer;
+    font-size: 0.5rem;
+    text-align:center;
+    cursor: pointer;
+    transition: right 600ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    transform: translate(-30%,50%) rotate(0.25turn);
+    z-index: 5;
+  }
+
+  #toggle + label:after {
+    content:"Chat";
+  }
+
+  #toggle:checked ~ #discourse {
+    left: 75vw;
+  }
+
+  #toggle:checked + label {
+    right: 25vw;
+    transform: translate(-30%,50%) rotate(0turn);
+  }
+
+  #toggle:checked ~ #content {
+    width: 75vw;
+  }
+
+  #toggle:checked + label:after {
+    content:"close >>";
   }
 }
 
@@ -220,5 +286,11 @@ progress::-webkit-progress-bar {
   width: 50%;
   display: block;
   height: inherit;
+}
+
+#toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 

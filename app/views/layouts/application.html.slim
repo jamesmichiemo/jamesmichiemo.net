@@ -9,22 +9,24 @@ html
     = csrf_meta_tags
     = favicon_link_tag 'favicon.ico'
   body class='initiative'
-    div.name James Michiemo
     header class='gallery-header'
-      section id='discourse'
-        #messages
-          = render @messages
-        form
-          label for='chat' Chat:
-          div style='position: relative;'
-            input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat' style='position: relative'
-            = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
-
-        - flash.each do |key, value|
-            div class=("alert alert-#{key}") = value
 
       div class='watch' style='position: relative;'
         h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
         = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
+    div.name James Michiemo
+    input type='checkbox' name='toggle' id='toggle'
+    label for='toggle'
+    aside id='discourse'
+      #messages
+        = render @messages
+      form
+        label for='chat' write a reply:
+        div
+          input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat'
+          = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
+
+      - flash.each do |key, value|
+          div class=("alert alert-#{key}") = value
 
     = yield

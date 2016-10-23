@@ -7,7 +7,7 @@ App.space = App.cable.subscriptions.create "SpaceChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#messages').append data['message']
+    $('#messages').prepend data['message']
 
   curate: (message) ->
     @perform 'curate', message: message
