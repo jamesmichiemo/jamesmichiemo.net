@@ -144,7 +144,7 @@ section p {
   margin: 0;
 }
 
-.name { text-align: center; }
+.name, .gift-shop { text-align: center; }
 @media (min-width: 61.5rem) {
   .name {
     position: fixed;
@@ -189,7 +189,7 @@ section p {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
+    display: none;
   }
 
 
@@ -292,5 +292,13 @@ progress::-webkit-progress-bar {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  display: none;
+}
+
+.gift-shop {
+  position: fixed;
+  top: 1.5%;
+  right: 2%; 
+  z-index: 3;
 }
 

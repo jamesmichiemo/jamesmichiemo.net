@@ -13,7 +13,9 @@ html
       div class='watch' style='position: relative;'
         h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
         = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
+
     div.name tabindex="1" James Michiemo 
+    = link_to(image_tag('shopping_cart.png', size: "30", alt: "Unlimited Mana Shop"), 'http://unlimitedmana.bigcartel.com/products', :class=>"gift-shop", :tabindex => "1")
     input type='checkbox' name='toggle' id='toggle' 
     label for='toggle' tabindex="1" onkeypress="javascript: if(event.keyCode == 13) document.getElementById('toggle').click();"    
     aside id='discourse'
@@ -26,6 +28,6 @@ html
           = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
 
       - flash.each do |key, value|
-          div class=("alert alert-#{key}") = value
+        div class=("alert alert-#{key}") = value
 
     = yield
