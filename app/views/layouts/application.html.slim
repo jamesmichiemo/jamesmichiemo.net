@@ -15,13 +15,13 @@ html
         h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
         = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
     div.name James Michiemo
-    input type='checkbox' name='toggle' id='toggle'
+    input type='checkbox' name='toggle' id='toggle' 
     label for='toggle'
     aside id='discourse'
       #messages
         = render @messages
       form
-        label for='chat' write a reply:
+        label for='chat' write a message:
         div
           input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat'
           = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
