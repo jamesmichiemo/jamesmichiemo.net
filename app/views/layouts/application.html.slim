@@ -10,20 +10,19 @@ html
     = favicon_link_tag 'favicon.ico'
   body class='initiative'
     header class='gallery-header'
-
       div class='watch' style='position: relative;'
         h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
         = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
-    div.name James Michiemo
+    div.name tabindex="1" James Michiemo 
     input type='checkbox' name='toggle' id='toggle' 
-    label for='toggle'
+    label for='toggle' tabindex="1" onkeypress="javascript: if(event.keyCode == 13) document.getElementById('toggle').click();"    
     aside id='discourse'
       #messages
         = render @messages
       form
         label for='chat' write a message:
         div
-          input type='text' data-behavior='space_curator' tabindex="1" id='chat' name='chat'
+          input type='text' data-behavior='space_curator' id='chat' name='chat'
           = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
 
       - flash.each do |key, value|

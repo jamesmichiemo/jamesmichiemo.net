@@ -20,6 +20,7 @@
 //= require clipboard.min
 //= require jquery.tabbable.min 
 //= require clock
+//= require focus
 //= require_tree .
 //= require unpoly
 
