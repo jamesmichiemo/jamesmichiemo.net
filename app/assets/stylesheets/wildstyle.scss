@@ -88,7 +88,7 @@ ol, .load {
 }
 
 footer.gallery-footer {
-  background-color: #fff;
+  background-color: rgba(255,255,255, 0.5);
   bottom: 0;
   position: fixed;
   right: 0;
@@ -166,7 +166,7 @@ section p {
     position: fixed;
     left: 100vw;
     top: 10vh;
-    width: 100%;
+    width: 20%;
     transition: left 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
     height: 45vh;
     #messages {
@@ -176,6 +176,10 @@ section p {
     form {
       position: absolute;
       top: 50vh;
+      width: 100%
+    }
+    input {
+      width: 100%
     }
   }
 
