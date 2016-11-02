@@ -77,6 +77,8 @@ h1, figcaption, .load {
 
 #content {
   flex: 1;
+  transition: width 1s ease-in;
+  width: 100%;
 }
 
 ol, .load {  
