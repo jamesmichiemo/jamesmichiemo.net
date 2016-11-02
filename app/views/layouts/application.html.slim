@@ -13,11 +13,16 @@ html
       div class='watch' style='position: relative;'
         h1 tabindex='2' #{Time.now.strftime("%H:%M")} UTC
         = image_tag('ffxiii_pointer.png', title: '', height: '30', width: '50')
+    input type='checkbox' name='info-toggle' id='info-toggle' 
+    label for='info-toggle' class='info-toggle' tabindex="1" onkeypress="javascript: if(event.keyCode == 13) document.getElementById('info-toggle').click();"
+    aside id='info'
+      p
+        | James Michiemo is a web developer and software engineer. Projects are mainly related to music, video games, and basic programming. In an early project, he made a music search filter using the circle of fifths; later, he helped rewrite and update Code School's Ruby5 podcast using Rails 4. Other projects have included collaborations with the Code School team, creating fun online courses for building web applications. He also loves open source. 
 
     div.name tabindex="1" James Michiemo 
     = link_to(image_tag('shopping_cart.png', size: "30", alt: "Unlimited Mana Shop"), 'http://unlimitedmana.bigcartel.com/products', :class=>"gift-shop", :tabindex => "1")
-    input type='checkbox' name='toggle' id='toggle' 
-    label for='toggle' tabindex="1" onkeypress="javascript: if(event.keyCode == 13) document.getElementById('toggle').click();"    
+    input type='checkbox' name='discourse-toggle' id='discourse-toggle' 
+    label for='discourse-toggle' class='discourse-toggle' tabindex="1" onkeypress="javascript: if(event.keyCode == 13) document.getElementById('toggle').click();"    
     aside id='discourse'
       #messages
         = render @messages

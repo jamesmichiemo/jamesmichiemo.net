@@ -77,8 +77,9 @@ h1, figcaption, .load {
 
 #content {
   flex: 1;
-  transition: width 1s ease-in;
+  transition: all 1s ease-in;
   width: 100%;
+  align-self: center;
 }
 
 ol, .load {  
@@ -147,8 +148,14 @@ section p {
 }
 
 .name, .gift-shop { text-align: center; }
+
+#info, #discourse, #info-toggle, #discourse-toggle {
+  display: none;
+}
+
 @media (min-width: 61.5rem) {
   .name {
+    display: none;
     position: fixed;
     top: 40%;
     left: 0;
@@ -158,12 +165,29 @@ section p {
   header, ol li, .load.dolly {
     @include span-columns(6);
     @include shift(3);
+
   }
   section p {
     font-size: 0.7rem;
   }
 
+  #info {
+    display: block;
+    z-index: 3; 
+    position: fixed;
+    right: 100vw;
+    top: 10vh;
+    width: 20%;
+    transition: right 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    height: 45vh;
+    p {
+      width: 90%;
+      font-size: 0.7rem;
+    }
+  }
+
   #discourse {
+    display: block;
     z-index: 3; 
     position: fixed;
     left: 100vw;
@@ -185,7 +209,56 @@ section p {
     }
   }
 
-  #toggle {
+  #info-toggle {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    transform: translate(-30%,50%) rotate(0.75turn);  
+    font-size: 0.5rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+  }
+
+
+  #info-toggle + label.info-toggle {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    cursor:pointer;
+    font-size: 0.5rem;
+    text-align:center;
+    cursor: pointer;
+    transition: left 600ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    transform: translate(-30%,50%) rotate(0.75turn);
+    z-index: 5;
+  }
+
+  #info-toggle + label.info-toggle:after {
+    content:"James Michiemo";
+  }
+
+  #info-toggle:checked ~ #info {
+    right: 75vw;
+  }
+
+  #info-toggle:checked + label.info-toggle {
+    left: 25vw;
+    transform: translate(-30%,50%) rotate(0turn);
+  }
+
+  #info-toggle:checked ~ #content {
+    width: 75vw;
+    align-self: center;
+  }
+
+  #info-toggle:checked + label.info-toggle:after {
+    content:"<< close ";
+  }
+
+  #discourse-toggle {
     position: fixed;
     top: 40%;
     right: 0;
@@ -199,7 +272,7 @@ section p {
   }
 
 
-  #toggle + label {
+  #discourse-toggle + label.discourse-toggle {
     position: fixed;
     top: 40%;
     right: 0;
@@ -212,24 +285,25 @@ section p {
     z-index: 5;
   }
 
-  #toggle + label:after {
+  #discourse-toggle + label.discourse-toggle:after {
     content:"Chat";
   }
 
-  #toggle:checked ~ #discourse {
+  #discourse-toggle:checked ~ #discourse {
     left: 75vw;
   }
 
-  #toggle:checked + label {
+  #discourse-toggle:checked + label.discourse-toggle {
     right: 25vw;
     transform: translate(-30%,50%) rotate(0turn);
   }
 
-  #toggle:checked ~ #content {
+  #discourse-toggle:checked ~ #content {
     width: 75vw;
+    align-self: center;
   }
 
-  #toggle:checked + label:after {
+  #discourse-toggle:checked + label.discourse-toggle:after {
     content:"close >>";
   }
 }
@@ -294,7 +368,7 @@ progress::-webkit-progress-bar {
   height: inherit;
 }
 
-#toggle {
+#discourse-toggle {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
