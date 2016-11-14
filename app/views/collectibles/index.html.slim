@@ -1,0 +1,27 @@
+h1 Listing collectibles
+
+table
+  thead
+    tr
+      th Title
+      th Description
+      th Image url
+      th Price
+      th
+      th
+      th
+
+  tbody
+    - @collectibles.each do |collectible|
+      tr
+        td = collectible.title
+        td = collectible.description
+        td = collectible.image_url
+        td = collectible.price
+        td = link_to 'Show', collectible
+        td = link_to 'Edit', edit_collectible_path(collectible)
+        td = link_to 'Destroy', collectible, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Collectible', new_collectible_path

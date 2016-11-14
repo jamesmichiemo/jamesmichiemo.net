@@ -1,0 +1,21 @@
+= form_for @collectible do |f|
+  - if @collectible.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@collectible.errors.count, "error")} prohibited this collectible from being saved:"
+      ul
+        - @collectible.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description, rows: 10, cols: 60
+  .field
+    = f.label :image_url
+    = f.text_field :image_url
+  .field
+    = f.label :price
+    = f.text_field :price
+  .actions = f.submit

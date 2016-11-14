@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924030356) do
+ActiveRecord::Schema.define(version: 20161114022328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collectibles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",       precision: 8, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text     "content"
@@ -38,6 +47,8 @@ ActiveRecord::Schema.define(version: 20160924030356) do
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.string   "state",      limit: 20, default: "draft"
+    t.string   "piece_id"
+    t.index ["piece_id"], name: "index_pieces_on_piece_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
