@@ -3,7 +3,8 @@ $ ->
     switch e.keyCode
       # left arrow
       when 37
-        $.tabPrev()
+        $.tabPrev() unless $("input,textarea").is(":focus") 
       # right arrow
       when 39
-        $.tabNext()
+        $.tabNext() unless $("input,textarea").is(":focus")
+
