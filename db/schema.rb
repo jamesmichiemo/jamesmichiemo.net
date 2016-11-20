@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 20161114022328) do
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.string   "state",      limit: 20, default: "draft"
-    t.string   "piece_id"
-    t.index ["piece_id"], name: "index_pieces_on_piece_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

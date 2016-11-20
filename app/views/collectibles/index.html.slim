@@ -1,26 +1,20 @@
+p#notice = notice
+
 h1 Listing collectibles
 
-table
-  thead
-    tr
-      th Title
-      th Description
-      th Image url
-      th Price
-      th
-      th
-      th
-
-  tbody
-    - @collectibles.each do |collectible|
-      tr
-        td = collectible.title
-        td = collectible.description
-        td = collectible.image_url
-        td = collectible.price
-        td = link_to 'Show', collectible
-        td = link_to 'Edit', edit_collectible_path(collectible)
-        td = link_to 'Destroy', collectible, data: { confirm: 'Are you sure?' }, method: :delete
+table.display-case
+  - @collectibles.each do |collectible|
+    tr class="#{cycle('list-line-odd', 'list-line-even')}"
+      td = image_tag(collectible.image_url, class: 'list-image')
+      td.list-description
+        dl
+          dt = collectible.title
+          dd = truncate(strip_tags(collectible.description), length: 80)
+      td.list-actions 
+        dl
+          = link_to 'Show', collectible
+          = link_to 'Edit', edit_collectible_path(collectible)
+          = link_to 'Destroy', collectible, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 

@@ -1,3 +1,61 @@
 // Place all the styles related to the Collectibles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.collectibles {
+  .display-case, h1, a {
+    border-collapse: collapse;
+    max-width: 90%;
+    margin: 0 5vw  0 5vw;
+  }
+
+  table tr td {
+    padding: 5px;
+  }
+  
+  .list-image {
+    width: 20vw;
+  }
+
+  .list-description {
+    width: 60%;
+    
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      color: #244;
+      font-weight: bold;
+      font-size: larger;
+    }
+    
+    dd {
+      margin: 0;
+    }
+  }
+
+  .list-actions dl {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: center;
+    font-size: x-small;
+    padding-left: 1em;
+    max-height: 100%;
+    a {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+
+  .list-line-even {
+    background: #e0f8f8;
+  }
+
+  .list-line-odd {
+    background: #f8b0f8;
+  }
+}
+
+
