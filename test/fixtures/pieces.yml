@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  video: MyString
+  audio: MyString 
+  caption: MyString
+  state: MyString
+
+two:
+  video: MyString
+  audio: MyString 
+  caption: MyString
+  state: MyString
