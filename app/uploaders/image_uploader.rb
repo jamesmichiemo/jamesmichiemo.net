@@ -8,7 +8,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   if Rails.env.production? || Rails.env.staging?
     storage :fog
 
-    include CarrierWave::MimeTypes
     process :set_content_type
 
     # Override the directory where uploaded files will be stored.
