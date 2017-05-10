@@ -19,3 +19,5 @@
 public/uploads
 
 *.pdf
+/public/packs
+/node_modules

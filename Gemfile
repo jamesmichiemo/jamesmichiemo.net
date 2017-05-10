@@ -33,7 +33,7 @@ gem 'redis', '~> 3.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'launchy'
@@ -65,4 +65,5 @@ gem 'mini_magick'
 gem 'neat'
 gem 'bourbon'
 gem 'trix'
+gem 'webpacker', github: 'rails/webpacker'
 
