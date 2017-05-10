@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '5.1.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -58,8 +58,8 @@ ruby "2.3.1"
 gem 'kaminari'
 gem 'aasm', '~> 4.1.0'
 gem 'bcrypt', '3.1.11'
-gem 'unpoly-rails'
-gem 'carrierwave'
+gem 'unpoly-rails', :git => 'https://github.com/jamesmichiemo/unpoly.git'  
+gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'neat'
